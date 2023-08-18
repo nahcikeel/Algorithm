@@ -1,0 +1,17 @@
+# https://www.acmicpc.net/problem/5585
+
+
+n = int(input().strip())
+
+change = 1000 - n                   # 거스름돈
+coins = [500, 100, 50, 10, 5, 1]    # 잔돈의 종류
+answer = 0                          # 잔돈의 개수 (초기화)
+
+for coin in coins:                  
+    if change == 0:                 # 거스름돈이 0원이 되면 종료
+        break
+
+    answer += change // coin        # 잔돈의 개수 ++(거스름돈을 잔돈으로 나눈 몫)
+    change = change % coin          # 남은 거스름돈(거스름돈을 잔돈으로 나눈 나머지)
+
+print(answer)
