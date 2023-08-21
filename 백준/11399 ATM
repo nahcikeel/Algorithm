@@ -1,0 +1,12 @@
+n = int(input())                     # 인원수
+a = list(map(int, input().split()))  # 인원별 시간정보
+
+k = list()                           # 누적 시간을 담아놓을 리스트
+result = 0                           # 초기화
+a.sort()                             # 시간 최소화를 위한 정렬
+
+for i in a:                          # 시간 정보를 하나씩 빼와서
+    result += i                      # 누적시간을 계산해서
+    k.append(result)                 # 리스트에 넣어주기
+
+print(sum(k))                        # 리스트에 담긴 시간 합
