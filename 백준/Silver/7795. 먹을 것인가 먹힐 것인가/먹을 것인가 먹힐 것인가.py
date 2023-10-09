@@ -16,7 +16,7 @@ for _ in range(N):    # 반복횟수 인풋
 
     for i in range(s):    # a의 길이만큼 반복
         while True:
-             if cnt == t or a[i] <= b[cnt]:    # t의 원소를 다 돌거나, a의 원소가 b의 원소보다 작아지면
+             if cnt == t or a[i] <= b[cnt]:    # t의 원소를 다 돌거나(a의 원소가 모두 b의 원소보다 크면), a의 원소가 b의 원소보다 작아지면
                 ans += cnt    # ans에 cnt 더해주면서 종료 => 다음 a원소 시작
                 break
              else:
