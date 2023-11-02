@@ -1,0 +1,14 @@
+a = input().upper()
+
+ki = list(set(a))
+chan = list()
+
+for i in ki:
+    cnt = a.count(i)
+    chan.append(cnt)
+
+if chan.count(max(chan)) > 1:
+    print('?')
+else:
+    idx = chan.index(max(chan))
+    print(ki[idx])
