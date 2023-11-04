@@ -1,0 +1,19 @@
+### fail!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+def solution(n, arr1, arr2):
+    answer = []
+    
+    for i in range(n-1):
+        arr1[i] = format(arr1[i], 'b').zfill(n)
+        arr2[i] = format(arr2[i], 'b').zfill(n)
+    
+    # for j in range(n-1):
+    #     arr1[j].replace('0',' ')
+    #     arr1[j].replace('1','#')
+            
+    # return arr1
+            
+    
+    # bin(arr1|arr2)
+    
+    # return answer
