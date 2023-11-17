@@ -1,0 +1,13 @@
+n,m  = input().split()
+
+min_n = n.replace('6','5')
+min_m = m.replace('6','5')
+
+minmin = int(min_n) + int(min_m)
+
+max_n = n.replace('5','6')
+max_m = m.replace('5','6')
+
+maxmax = int(max_n) + int(max_m)
+
+print(minmin, maxmax)
