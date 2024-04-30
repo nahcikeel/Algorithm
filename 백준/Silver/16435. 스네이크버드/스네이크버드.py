@@ -1,14 +1,12 @@
-import sys
-
-n, a = map(int, sys.stdin.readline().strip().split())
-fruits = list(map(int, sys.stdin.readline().strip().split()))
+length, start = map(int, input().split())
+fruits = list(map(int, input().split()))
 
 fruits.sort()
 
-for fruit in fruits:
-    if fruit <= a:
-        a += 1
-    else:
+for i in range(length):
+    if fruits[i] <= start:
+        start += 1
+    elif fruits[i] > start:
         break
 
-print(a)
+print(start)
