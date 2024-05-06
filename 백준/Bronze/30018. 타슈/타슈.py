@@ -4,8 +4,8 @@ b = list(map(int, input().split()))
 
 answer = 0
 
-for i in range(len(a)):
+for i in range(n):
     if a[i]>b[i]:
-        answer += abs(a[i]-b[i])
+        answer += a[i]-b[i]
 
 print(answer)
