@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 n, c = list(map(int, input().split()))  #집 개수 N, 공유기 C개
 
-houses = [int(input().rstrip()) for _ in range(n)]
+houses = [int(input()) for _ in range(n)]
 
 houses.sort()
 
