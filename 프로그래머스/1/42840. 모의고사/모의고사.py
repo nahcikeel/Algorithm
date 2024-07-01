@@ -1,7 +1,7 @@
 def solution(answers):
     
     answer = []
-    rank = [-1,0,0,0]
+    rank = [0,0,0,0]
     
     s1 = [1, 2, 3, 4, 5]
     s2 = [2, 1, 2, 3, 2, 4, 2, 5]
