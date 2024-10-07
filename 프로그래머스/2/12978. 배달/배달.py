@@ -6,8 +6,7 @@ def solution(N, road, K):
     path = [[] for _ in range(N+1)]
     
     # 각 마을 경로,가중치 계산
-    for r in road:
-        start, end ,time = r[0], r[1], r[2]
+    for start, end ,time in road:
         path[start].append([end,time])
         path[end].append([start,time])
     
@@ -20,9 +19,6 @@ def solution(N, road, K):
     
     while heap:
         current_distance, current_village = heapq.heappop(heap)
-        
-        if current_distance < distances[current_village]:
-            continue
         
         for neighbor, travel_time in path[current_village]:
             distance = current_distance + travel_time
