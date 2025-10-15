@@ -1,7 +1,7 @@
 from collections import deque
 
-n, m = map(int, input().split())  # n: 가로, m: 세로
-war = [list(input().strip()) for _ in range(m)]
+n, m = map(int, input().split())
+war = [list(input()) for _ in range(m)]
 visited = [[False] * n for _ in range(m)]
 
 dirs = [(0,1), (0,-1), (1,0), (-1,0)]
