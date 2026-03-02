@@ -1,21 +1,31 @@
-from collections import deque
-import math
-
 def solution(progresses, speeds):
     answer = []
-    work = []
-    n = len(progresses)
     
-    for i in range(n):
-        work.append(math.ceil((100-progresses[i]) / speeds[i]))
+    remains = []
+    for i in range(len(progresses)):
+        progress = progresses[i]
+        speed = speeds[i]
+        if (100-progress)%speed == 0:
+            remain = (100-progress)//speed
+        else:
+            remain = (100-progress)//speed + 1
+        remains.append(remain)
     
-    idx = 0
-    
-    for j in range(n):
-        if work[idx] < work[j]:
-            answer.append(j-idx)
-            idx = j
-    
-    answer.append(n-idx)
+    cnt = 1
+    cur = remains.pop(0)
+    while remains:
+        nxt = remains.pop(0)
+        
+        if nxt <= cur:
+            cnt += 1
+            if not remains:
+                answer.append(cnt)
+            
+        else:
+            cur = nxt
+            answer.append(cnt)
+            cnt = 1
+            if not remains:
+                answer.append(cnt)
     
     return answer
