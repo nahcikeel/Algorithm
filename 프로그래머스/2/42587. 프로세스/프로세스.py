@@ -1,24 +1,20 @@
 from collections import deque
 
 def solution(priorities, location):
-    answer = 0
 
-    pri = deque(priorities)
-    nn = deque([i for i in range(len(priorities))])
-
+    q = deque()
+    for idx,num in enumerate(priorities):
+        q.append((idx,num))
+    
     cnt = 0
-
-    while pri:
-        p = pri.popleft()
-        n = nn.popleft()
-        
-        if len(pri)==0:
-            return cnt+1
-
-        if p >= max(pri):
+    while q:
+        idx,num = q.popleft()
+        if num == max(priorities):
+            priorities.remove(num)
             cnt += 1
-            if n == location:
-                return cnt
+            if idx == location:
+                break
         else:
-            pri.append(p)
-            nn.append(n)
+            q.append(((idx,num)))
+                
+    return cnt
